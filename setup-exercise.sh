@@ -2,7 +2,7 @@
 
 apiappname=PrintFramerAPI$(openssl rand -hex 5)
 
-printf "Set username and password email for Git\n"
+printf "Set username and password email for Git\n\n"
 
 
 GIT_USERNAME=gitName$Random
@@ -18,17 +18,17 @@ RESOURCE_GROUP=$(az group list --query "[0].name" -o tsv)
 PLAN_NAME=myPlan
 
 
-printf "Create App Service plan in FREE tier\n"
+printf "Create App Service plan in FREE tier\n\n"
 
 
 az appservice plan create --name $apiappname --resource-group $RESOURCE_GROUP --sku FREE --verbose
 
-printf "Create API App\n"
+printf "Create API App\n\n"
 
 az webapp create --name $apiappname --resource-group $RESOURCE_GROUP --plan $apiappname --deployment-local-git --verbose
 
 
-printf "Set the account-level deployment credentials\n"
+printf "Set the account-level deployment credentials\n\n"
 
 
 DEPLOY_USER="myName1$(openssl rand -hex 5)"
@@ -45,27 +45,28 @@ REMOTE_NAME=production
 
 
 # Set remote on src
-printf "Set Git remote\n"
+printf "Set Git remote\n\n"
 
 
 git remote add $REMOTE_NAME $GIT_URL
 
 
-printf "Git add\n"
+printf "Git add\n\n"
 
 git add .
 git commit -m "initial revision"
 
 
-printf "Git push\n"
+printf "Git push\n\n"
 
 
 printf "When prompted for a password enter this: $DEPLOY_PASSWORD\n"
 git push --set-upstream $REMOTE_NAME master
 
 
-printf "Setup complete\n"
+printf "Setup complete\n\n"
 
+printf "%s %s %s\n\n" "Password for " "$GIT_URL:" "$DEPLOY_PASSWORD"
 
 printf "Example URL: https://$apiappname.azurewebsites.net/api/values/6/7\n\n"
 
