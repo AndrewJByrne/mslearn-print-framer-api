@@ -60,8 +60,9 @@ git commit -m "initial revision"
 printf "Git push\n\n"
 
 
-printf "When prompted for a password enter this: $DEPLOY_PASSWORD\n"
-git push --set-upstream $REMOTE_NAME master
+# printf "When prompted for a password enter this: $DEPLOY_PASSWORD\n"
+# git push --set-upstream $REMOTE_NAME master
+git push "https:///$DEPLOY_USER:$DEPLOY_PASSWORD@@$apiappname.scm.azurewebsites.net/$apiappname.git"
 
 
 printf "Setup complete!\n\n"
