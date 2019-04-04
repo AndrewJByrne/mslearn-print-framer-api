@@ -66,9 +66,11 @@ git push --set-upstream $REMOTE_NAME master
 
 printf "Setup complete!\n\n"
 
+Printf "***********************    IMPORTANT INFO  *********************\n\n"
+
 printf "%s %s %s\n\n" "Password for " "$GIT_URL:" "$DEPLOY_PASSWORD"
 
 printf "Example URL: https://$apiappname.azurewebsites.net/api/values/6/7\n\n"
 
-printf "Swagger URL: https://$apiappname.azurewebsites.net/swagger"
+printf "Swagger URL: https://$apiappname.azurewebsites.net/swagger\n"
 
