@@ -66,7 +66,7 @@ git push --set-upstream $REMOTE_NAME master
 
 printf "Setup complete!\n\n"
 
-Printf "***********************    IMPORTANT INFO  *********************\n\n"
+printf "***********************    IMPORTANT INFO  *********************\n\n"
 
 printf "%s %s %s\n\n" "Password for " "$GIT_URL:" "$DEPLOY_PASSWORD"
 
